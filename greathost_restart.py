@@ -92,8 +92,13 @@ class GH:
         time.sleep(2) # 等待面板数据加载
 
     def get_server(self):
-        servers = self.api("/api/servers").get("servers", [])
+        data = self.api("/api/servers")
+        print(f"DEBUG: 获取服务器列表的原始返回 -> {data}") # 添加这行打印
+        servers = data.get("servers", [])
         return next((s for s in servers if s.get("name") == TARGET_NAME), None)
+    #def get_server(self):
+        #servers = self.api("/api/servers").get("servers", [])
+        #return next((s for s in servers if s.get("name") == TARGET_NAME), None)
 
     def get_status(self, sid):
         info = self.api(f"/api/servers/{sid}/information")
