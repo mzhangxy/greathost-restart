@@ -2,8 +2,8 @@ name: Greathost-AutoRestart-PY
 
 on:
   workflow_dispatch:        # 推荐：需要重启时手动到 Actions 页面点击运行
-  schedule:
-    - cron: '0 20 * 1 *'    # 可选：每天 UTC 20:00 (北京时间凌晨 4:00) 自动重启一次
+  #schedule:
+  #  - cron: '0 20 * 1 *'    # 可选：每天 UTC 20:00 (北京时间凌晨 4:00) 自动重启一次
 
 jobs:
   Auto_restart_greathost:
